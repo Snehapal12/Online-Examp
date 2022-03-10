@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LNMIIT Quiz Portal</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="bootstrap/css/custom-theme.css">
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap/js/jquery-2.2.2.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="jumbotron">
+    <h1>LNMIIT Quiz Portal</h1>
+    <p class="lead">Complete quiz portal for freak!!</p>
+</div>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">LNMIIT Quiz Portal</a>
+        </div>
+
+        <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
+            <ul class="nav navbar-nav">
+                <li><a href="index.jsp">About Project</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li <c:out value="${(page == 'signup') ? 'class=active' : ''}"/>>
+                    <a href="signup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                </li>
+                <li <c:out value="${(page == 'login') ? 'class=active' : ''}"/>>
+                    <a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
+    </header>
+    <div class="col-lg-1"></div>
+    <div class="col-sm-10">
+        
+        <form class="form-horizontal" action="Login" method="post">
+            <fieldset>
+                <legend>Login Form</legend>
+                <div class="form-group">
+                    <label for="inputUsername" class="col-lg-2 control-label">Username</label>
+                    <div class="col-lg-10">
+                        <input type="text" name="username" class="form-control" id="inputUsername"
+                               placeholder="Username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                    <div class="col-sm-8">
+                        <input type="password" name="password" class="form-control" id="inputPassword"
+                               placeholder="Password">
+                    </div>
+                    <div class="col-sm-2 text-right">
+                        <button type="button" class="btn btn-primary" id="showpass">Show Password</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-5">
+                        <button type="reset" class="btn btn-default">Reset</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+</body>
+<script>
+    $('.nav-collapse').click('li', function () {
+        $('.nav-collapse').collapse('hide');
+    });
+
+    $('#showpass').mousedown(function () {
+        $('#inputPassword').removeAttr("type").prop('type', 'text');
+    }).mouseup(function () {
+        $('#inputPassword').removeAttr("type").prop('type', 'password');
+    })
+    ;
+</script>
+</html>
